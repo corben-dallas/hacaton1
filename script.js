@@ -1,4 +1,4 @@
-const array = [1,7,5,8,3];
+const array = [3,5,1,2,10];
 
 // function sortItems(array) {
 // 	for (let i = 0; i < array.length; i++) {
@@ -43,27 +43,70 @@ const array = [1,7,5,8,3];
 
 // /////////////////////////////////////////////////////
 
-const sort3 = arr => {
-	for (var i = 0; i < arr.length; i++) { 
-		const k = arr[i];
-		let j = i;
+// const sort3 = arr => {
+// 	for (var i = 0; i < arr.length; i++) { 
+// 		const k = arr[i];
+// 		let j = i;
 
-		while (j > 0 && arr[j - 1] > k) { 
-			arr[j] = arr[j - 1]; 
-			j--; 
-		}
+// 		while (j > 0 && arr[j - 1] > k) { 
+// 			arr[j] = arr[j - 1]; 
+// 			j--; 
+// 		}
 
-		arr[j] = k;
+// 		arr[j] = k;
+// 	}
+
+// 	return arr;
+// }
+
+
+
+// const result = sort3(array);
+// console.log('result', result);
+
+const tree = {
+	value: 1,
+	next: [
+		{
+			value: 2,
+			next: [
+				{
+					value: 3,
+					next: [],
+				},
+				{
+					value: 4,
+					next: [],
+				},
+				{
+					value: 5,
+					next: [],
+				},
+			],
+		},
+		{
+			value: 6,
+			next: [
+				{
+					value: 7,
+					next: [],
+				},
+			],
+		},
+	]
+};
+
+const findChilds = (tree) => {
+	console.log(tree.value);
+	
+	if (tree && tree.next && tree.next.length === 0) {
+		console.log('no childs');
 	}
 
-	return arr;
+	for (let i = 0; i < tree.next.length; i++) {
+		const child = tree.next[i];
+		findChilds(child);
+	}
 }
 
-
-
-const result = sort3(array);
-console.log('result', result);
-
-// const treeA = {
-
-// };
+findChilds(tree);
