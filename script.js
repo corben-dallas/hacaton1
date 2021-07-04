@@ -1,20 +1,20 @@
-const array = [5,3,1,8,7];
+const array = [5,3,1,8,7,0,2];
 
-const bubbleSort = arr => {
-	for (let i = 0, end_i = arr.length - 1; i < end_i; i++) {
-		let itWasSwapped = false;
-
-		for (let j = 0, end_j = end_i - i; j < end_j; j++) {
-			if (arr[j] > arr[j + 1]) {
-				[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-				itWasSwapped = true;
+function sortItems(array) {
+	for (let i = 0; i < array.length; i++) {
+		for (let j = 0; j < array.length; j++) {
+			if (array[j] > array[j + 1]) {
+				let temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
 			}
 		}
-		
-		if (!itWasSwapped) break;
 	}
 
-	return arr;
-};
+	return array;
+}
+console.log('result', sortItems(array));
 
-console.log('result', bubbleSort(array));
+// /////////////////////////////////////////////////////////////
+
+
