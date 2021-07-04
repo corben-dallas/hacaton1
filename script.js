@@ -1,4 +1,4 @@
-const array = [1,3,7,5,2,8,3];
+const array = [1,7,5,8,3];
 
 // function sortItems(array) {
 // 	for (let i = 0; i < array.length; i++) {
@@ -22,7 +22,8 @@ const sort2 = arr => {
 	let length = arr.length;
 
 	for(let i = 0; i < arr.length; i++) {
-		for (let j = 0; j < length; j++) {
+		for (let j = 1; j < length; j++) {
+			console.log(arr);
 			if (arr[j] > max) {
 				max = arr[j];
 				let temp = arr[j];
